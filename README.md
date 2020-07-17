@@ -59,6 +59,7 @@ root
 |--createids.py
 |--dataturk.json
 |--removeUselessFilesRejectedbymodel.py
+|--train.csv   ------->Will come from xml_to_csv file
 |--xml_to_csv.py
 ```
 
