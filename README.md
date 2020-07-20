@@ -33,7 +33,9 @@ root
   ```
 - Open train.csv
 
-    Find and replace \ to / 
+   **Step not Required CODE UPDATED**
+   
+   ~~Find and replace \ to /~~
     
 - Before converting to coco we need to create labels.txt and ids.txt
   ```bash
