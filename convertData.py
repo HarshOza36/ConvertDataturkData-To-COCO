@@ -5,7 +5,7 @@ import json
 import logging
 import requests
 from PIL import Image
-
+from tqdm import tqdm
 
 # enable info logging.
 logging.getLogger().setLevel(logging.INFO)
@@ -29,7 +29,7 @@ def maybe_download(image_url, image_dir):
             print("Not a 200 response")
     except Exception as e:
         logging.exception("Failed to download image at " +
-                          image_url + " \n" + str(e) + "\nignoring….")
+                          image_url + " \n" + str(e) + "\n ignoring….")
         raise e
 
 
@@ -41,8 +41,8 @@ def get_xml_for_bbx(bbx_label, bbx_data, width, height):
     # ymax = int(bbx_data['points'][1]['y']*height)
     xmin = int(bbx_data['points'][0][0]*width)
     ymin = int(bbx_data['points'][0][1]*height)
-    xmax = int(bbx_data['points'][1][0]*width)
-    ymax = int(bbx_data['points'][1][1]*height)
+    xmax = int(bbx_data['points'][2][0]*width)
+    ymax = int(bbx_data['points'][2][1]*height)
     xml = "<object>\n"
     xml = xml + "\t<name>" + bbx_label + "</name>\n"
     xml = xml + "\t<pose>Unspecified</pose>\n"
@@ -72,37 +72,40 @@ def convert_to_PascalVOC(dataturks_labeled_item, image_dir, xml_out_dir):
     '''
     try:
         data = json.loads(dataturks_labeled_item)
-        width = data['annotation'][0]['imageWidth']
-        height = data['annotation'][0]['imageHeight']
-        image_url = data['content']
-        filePath = maybe_download(image_url, image_dir)
-        with Image.open(filePath) as img:
-            width, height = img.size
-        fileName = filePath.split("/")[-1]
-        image_dir_folder_Name = image_dir.split("/")[-1]
-        xml = "<annotation>\n<folder>" + image_dir_folder_Name + "</folder>\n"
-        xml = xml + "<filename>" + fileName + "</filename>\n"
-        xml = xml + "<path>" + filePath + "</path>\n"
-        xml = xml + "<source>\n\t<database>Unknown</database>\n</source>\n"
-        xml = xml + "<size>\n"
-        xml = xml + "\t<width>" + str(width) + "</width>\n"
-        xml = xml + "\t<height>" + str(height) + "</height>\n"
-        xml = xml + "\t<depth>Unspecified</depth>\n"
-        xml = xml + "</size>\n"
-        xml = xml + "<segmented>Unspecified</segmented>\n"
-        for bbx in data['annotation']:
-            bbx_labels = bbx['label']
-            # handle both list of labels or a single label.
-            if not isinstance(bbx_labels, list):
-                bbx_labels = [bbx_labels]
-            for bbx_label in bbx_labels:
-                xml = xml + get_xml_for_bbx(bbx_label, bbx, width, height)
-        xml = xml + "</annotation>"
-        # output to a file.
-        xmlFilePath = os.path.join(xml_out_dir, fileName + ".xml")
-        with open(xmlFilePath, 'w') as f:
-            f.write(xml)
-        return True
+        if(data['annotation'] == None or data['annotation'] == []):
+            print("NO ANNOTATIONS")
+        else:
+            width = data['annotation'][0]['imageWidth']
+            height = data['annotation'][0]['imageHeight']
+            image_url = data['content']
+            filePath = maybe_download(image_url, image_dir)
+            with Image.open(filePath) as img:
+                width, height = img.size
+            fileName = filePath.split("/")[-1]
+            image_dir_folder_Name = image_dir.split("/")[-1]
+            xml = "<annotation>\n<folder>" + image_dir_folder_Name + "</folder>\n"
+            xml = xml + "<filename>" + fileName + "</filename>\n"
+            xml = xml + "<path>" + filePath + "</path>\n"
+            xml = xml + "<source>\n\t<database>Unknown</database>\n</source>\n"
+            xml = xml + "<size>\n"
+            xml = xml + "\t<width>" + str(width) + "</width>\n"
+            xml = xml + "\t<height>" + str(height) + "</height>\n"
+            xml = xml + "\t<depth>Unspecified</depth>\n"
+            xml = xml + "</size>\n"
+            xml = xml + "<segmented>Unspecified</segmented>\n"
+            for bbx in data['annotation']:
+                bbx_labels = bbx['label']
+                # handle both list of labels or a single label.
+                if not isinstance(bbx_labels, list):
+                    bbx_labels = [bbx_labels]
+                for bbx_label in bbx_labels:
+                    xml = xml + get_xml_for_bbx(bbx_label, bbx, width, height)
+            xml = xml + "</annotation>"
+            # output to a file.
+            xmlFilePath = os.path.join(xml_out_dir, fileName + ".xml")
+            with open(xmlFilePath, 'w') as f:
+                f.write(xml)
+            return True
     except Exception as e:
         logging.exception("Unable to process item " +
                           dataturks_labeled_item + "\n" + "error = " + str(e))
@@ -132,7 +135,7 @@ def main():
         return
     count = 0
     success = 0
-    for line in lines:
+    for line in tqdm(lines):
         status = convert_to_PascalVOC(
             line, image_download_dir, pascal_voc_xml_dir)
         if (status):
@@ -171,4 +174,4 @@ if __name__ == '__main__':
 
 
 # To run the file
-# python convertData.py bounding_box.json downloads pascal_voc_op
+# python convertData.py bounding_box.json downloads pascal
