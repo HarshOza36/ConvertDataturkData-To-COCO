@@ -71,7 +71,7 @@ root
       python convertJsontoCOCOformat.py --ann_dir pascal_voc/downloads --ann_ids pascal_voc/ids.txt --labels pascal_voc/labels.txt --output mainout.json
   ```
   
- - Now you will get your COCO format json
+ - Now you will get your COCO format json end
  
  
  ## Note: if using with Fastai , run the get_annotations functions and print the images
@@ -82,6 +82,6 @@ root
 ```bash
           python removeUselessFilesRejectedbymodel.py
 ```
-
+# RUN EVRYTHING AGAIN COCO format json end
 
 # Finally it can be used in Fastai
