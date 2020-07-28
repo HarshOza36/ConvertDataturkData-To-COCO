@@ -15,7 +15,7 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
 File Struture:
 root
 ├──downloads
-├──pascal_voc
+├──pascal
    ├──downloads
 ├──convertData.py
 ├──convertJsontoCOCOformat.py
@@ -29,10 +29,10 @@ root
 
 - Open terminal go to this folder.
   ```bash
-    python convertData.py dataturk.json downloads pascal_voc_op
+    python convertData.py dataturk.json downloads pascal
   ```
-  This will fill files in the downloads folder and pascal_voc
-  Cut paste downloaded images from downloads folder to pascal_voc/downloads
+  This will fill files in the downloads folder and pascal
+  Cut paste downloaded images from downloads folder to pascal/downloads
  
 - Convert it to CSV.
   ```bash
@@ -54,14 +54,14 @@ root
 
 #### STEP 4
 
-- Now paste labels.txt and ids.txt into pascal_voc and new filestructure is:
+- Now paste labels.txt and ids.txt into pascal and new filestructure is:
 
 ```
 File Struture:
 root
 ├──downloads
     ├──Multiple Images
-├──pascal_voc
+├──pascal
    ├──downloads
       ├──Multiple images copied from downloads folder
    ├──Multiple XMLS
@@ -81,7 +81,7 @@ root
 - Now run the main coco convert file
 
   ```bash
-      python convertJsontoCOCOformat.py --ann_dir pascal_voc/downloads --ann_ids pascal_voc/ids.txt --labels pascal_voc/labels.txt --output mainout.json
+      python convertJsontoCOCOformat.py --ann_dir pascal/downloads --ann_ids pascal/ids.txt --labels pascal/labels.txt --output mainout.json
   ```
   
  - Now you will get your COCO format json end
@@ -100,7 +100,7 @@ root
 # Finally your Dataset will contain
 ```
 root    
-├──pascal_voc
+├──pascal
    ├──downloads
        ├──Multiple Images
 ├──dataturk.json
