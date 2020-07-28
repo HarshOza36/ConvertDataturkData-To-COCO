@@ -2,11 +2,11 @@ import os
 import glob
 import pandas as pd
 import xml.etree.ElementTree as ET
-
+from tqdm import tqdm
 
 def xml_to_csv(path):
     xml_list = []
-    for xml_file in glob.glob(path + '/*.xml'):
+    for xml_file in tqdm(glob.glob(path + '/*.xml')):
         tree = ET.parse(xml_file)
         root = tree.getroot()
         for member in root.findall('object'):
