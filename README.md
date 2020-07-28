@@ -113,6 +113,9 @@ root
 ├──pascal
    ├──downloads
        ├──Multiple Images
+   ├──Multiple XMLS
+   ├──ids.txt
+   ├──labels.txt
 ├──dataturk.json
 ├──mainout.json
 ```
