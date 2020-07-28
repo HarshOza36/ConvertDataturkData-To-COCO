@@ -52,6 +52,9 @@ root
   ```
   For labels.txt add your own labels in the file.
 
+- **Note : It is advised to add the labels into the list  in LINE NO. 22 of  ```convertJsontoCOCOformat.py```**
+- The reason is some times text file is not read with next line character so you may face this issue, better add the labels manually
+
 #### STEP 4
 
 - Now paste labels.txt and ids.txt into pascal and new filestructure is:
@@ -96,6 +99,9 @@ root
 ```bash
           python removeUselessFilesRejectedbymodel.py
 ```
+- This gives you a folder untagged, remove that folder from pascal directory and save it somewhere else if you want it else delete the whole folder.
+
+
 # Once useless images are removed you need to run STEP 3 Again since Ids are basically filenames
 # After thats again paste that ids.txt in the pascal folder that is Step 4
 # Run Step 5 again
