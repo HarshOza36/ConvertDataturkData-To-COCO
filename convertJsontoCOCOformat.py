@@ -4,40 +4,6 @@ import json
 import os
 from tqdm import tqdm
 
-# to add images in images=[{id:id,fiename:filename}] format'
-
-# dirr = os.listdir('pascal_voc_op/downloads')
-# d = []
-# k = 10000
-# for i in tqdm(range(len(dirr))):
-#     d.append({"id": k, "filename": dirr[i]})
-#     k += 1
-# dd = {"images": d}
-# with open('main.json', 'w') as f:
-#     json.dump(dd, f)
-# format = [{"image_id": "id", "bbox": [], "category_id":"cat_id"}]
-# path = 'pascal_voc_op/'
-# dirr = os.listdir('pascal_voc_op/')
-# dirr.remove('downloads')
-# with open('main.json') as f:
-#     data = json.load(f)
-# lenda = (len(data['images']))
-
-
-# def find_id(data, filename):
-#     for i in range(lenda):
-#         if(data['images'][i]["filename"] == filename):
-#             id = data['images'][i]["id"]
-#     return id
-
-
-# tree = ET.parse(path+dirr[0])
-# root = tree.getroot()
-# print(root[1].tag, root[1].text)
-# filename = root[1].text
-# width = root[4][0].text
-# height = root[4][1].text
-
 
 import os
 import argparse
@@ -53,6 +19,7 @@ def get_label2id(labels_path: str) -> Dict[str, int]:
     with open(labels_path, 'r') as f:
         labels_str = f.read().split()
         # print(labels_str)
+        # ADD YOU LABELS IN THIS LIST
         labels_str = ['education', 'work experience',
                       'projects', 'achievements', 'certificates']
     labels_ids = list(range(1, len(labels_str)+1))
