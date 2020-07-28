@@ -21,7 +21,7 @@ def get_label2id(labels_path: str) -> Dict[str, int]:
         # print(labels_str)
         # ADD YOU LABELS IN THIS LIST
         labels_str = ['education', 'work experience',
-                      'projects', 'achievements', 'certificates']
+                      'projects', 'achievements', 'certificates','background']
     labels_ids = list(range(1, len(labels_str)+1))
     print(dict(zip(labels_str, labels_ids)))
     return dict(zip(labels_str, labels_ids))
