@@ -96,6 +96,15 @@ root
 ```bash
           python removeUselessFilesRejectedbymodel.py
 ```
-# RUN EVERYTHING AGAIN From STEP 1 to 5
+# Once useless images are removed you need to run STEP 5 Again
+# Finally your Dataset will contain
+```
+root    
+├──pascal_voc
+   ├──downloads
+       ├──Multiple Images
+├──dataturk.json
+├──mainout.json
+```
 
 # Finally it can be used in Fastai
