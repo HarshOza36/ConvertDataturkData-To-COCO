@@ -84,7 +84,7 @@ root
 - Now run the main coco convert file
 
   ```bash
-      python convertJsontoCOCOformat.py --ann_dir pascal/downloads --ann_ids pascal/ids.txt --labels pascal/labels.txt --output mainout.json
+      python convertJsontoCOCOformat.py  --ann_dir pascal --ann_ids pascal/ids.txt --labels pascal/labels.txt --output  mainout.json
   ```
   
  - Now you will get your COCO format json end
