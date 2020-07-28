@@ -4,6 +4,11 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
 
 # How to Use
 
+## Long Procedure Incoming !!
+#### Sorry for that !!
+
+#### STEP 1
+
 - First create the folder structure
     Create a folder downloads , pascal_voc and pascal_voc/downloads
 ```
@@ -19,6 +24,8 @@ root
 ├──removeUselessFilesRejectedbymodel.py
 ├──xml_to_csv.py
 ```
+
+#### STEP 2
 
 - Open terminal go to this folder.
   ```bash
@@ -36,13 +43,17 @@ root
    **Step not Required CODE UPDATED**
    
    ~~Find and replace \ to /~~
+   
+ #### STEP 3
     
 - Before converting to coco we need to create labels.txt and ids.txt
   ```bash
       python createids.py
   ```
   For labels.txt add your own labels in the file.
- 
+
+#### STEP 4
+
 - Now paste labels.txt and ids.txt into pascal_voc and new filestructure is:
 
 ```
@@ -65,6 +76,8 @@ root
 ├──xml_to_csv.py
 ```
 
+#### STEP 5
+
 - Now run the main coco convert file
 
   ```bash
@@ -77,11 +90,12 @@ root
  ## Note: if using with Fastai , run the get_annotations functions and print the images
     Some images get rejected, so we need to remove that completely.
     Copy the output of images frmo get_annotation function and paste it as list l in the file removeUselessFilesRejectedbymodel.py
-    
+#### Extra Step 6
+
 - Run 
 ```bash
           python removeUselessFilesRejectedbymodel.py
 ```
-# RUN EVRYTHING AGAIN COCO format json end
+# RUN EVERYTHING AGAIN From STEP 1 to 5
 
 # Finally it can be used in Fastai
