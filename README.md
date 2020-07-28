@@ -92,7 +92,7 @@ root
  
  ## Note: if using with Fastai , run the get_annotations functions and print the images
     Some images get rejected, so we need to remove that completely.
-    Copy the output of images frmo get_annotation function and paste it as list l in the file removeUselessFilesRejectedbymodel.py
+    Copy the output of images from get_annotation function and paste it as list l in the file removeUselessFilesRejectedbymodel.py
 #### Extra Step 6
 
 - Run 
