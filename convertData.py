@@ -79,7 +79,7 @@ def convert_to_PascalVOC(dataturks_labeled_item, image_dir, xml_out_dir):
             height = data['annotation'][0]['imageHeight']
             image_url = data['content']
             filePath = maybe_download(image_url, image_dir)
-            filePath = str(filePath).replace("\","/")
+            filePath = str(filePath).replace("\\", "/")
             with Image.open(filePath) as img:
                 width, height = img.size
             fileName = filePath.split("/")[-1]
