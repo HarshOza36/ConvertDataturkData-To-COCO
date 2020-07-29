@@ -7,23 +7,29 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
 ## Long Procedure Incoming !!
 #### Sorry for that !!
 
-#### STEP 1
-
-- First create the folder structure
+<details open>
+    <summary>Step1</summary>
+    <br>
+    # STEP 1
+    <br>
+    <ul><li> First create the folder structure</li></ul>
     Create a folder downloads , pascal_voc and pascal_voc/downloads
-```
-File Struture:
-root
-├──downloads
-├──pascal
-   ├──downloads
-├──convertData.py
-├──convertJsontoCOCOformat.py
-├──createids.py
-├──dataturk.json
-├──removeUselessFilesRejectedbymodel.py
-├──xml_to_csv.py
-```
+    
+    File Struture:
+    root
+    ├──downloads
+    ├──pascal
+       ├──downloads
+    ├──convertData.py
+    ├──convertJsontoCOCOformat.py
+    ├──createids.py
+    ├──dataturk.json
+    ├──removeUselessFilesRejectedbymodel.py
+    ├──xml_to_csv.py
+    
+</details>
+
+
 
 #### STEP 2
 
