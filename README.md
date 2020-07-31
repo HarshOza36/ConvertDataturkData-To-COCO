@@ -29,7 +29,7 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
     
 </details>
 <details open>
-    <summary>STEP 2</summary>
+    <summary><b>STEP 2</b></summary>
     <br>
     # STEP 2
     <ul>
@@ -49,9 +49,9 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
 
 
 <details open>
-    <summary>STEP 3</summary>
+    <summary><b>STEP 3</b></summary>
     <br>
-    # STEP 3
+    <h3><b># STEP 3</b></h3>
     <ul>
         <li>Before converting to coco we need to create labels.txt and ids.txt</li>
                
