@@ -28,38 +28,45 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
     ├──xml_to_csv.py
     
 </details>
-
-
-
-#### STEP 2
-
-- Open terminal go to this folder.
-  ```bash
-    python convertData.py dataturk.json downloads pascal
-  ```
-  This will fill files in the downloads folder and pascal
-  Cut paste downloaded images from downloads folder to pascal/downloads
- 
-- Convert it to CSV.
-  ```bash
-      python xml_to_csv.py
-  ```
-- Open train.csv
-
-   **Step not Required CODE UPDATED**
+<details open>
+    <summary>STEP 2</summary>
+    <br>
+    # STEP 2
+    <ul>
+        <li>Open terminal go to this folder.</li>
+               
+            python convertData.py dataturk.json downloads pascal
+            
+            This will fill files in the downloads folder and pascal
+            Cut paste downloaded images from downloads folder to pascal/downloads
+            
+   <li>Convert it to CSV.</li>
    
-   ~~Find and replace \ to /~~
-   
- #### STEP 3
-    
-- Before converting to coco we need to create labels.txt and ids.txt
-  ```bash
-      python createids.py
-  ```
-  For labels.txt add your own labels in the file.
+             python xml_to_csv.py
+        
+   </ul>
+</details>
 
-- **Note : It is advised to add the labels into the list  in LINE NO. 22 of  ```convertJsontoCOCOformat.py```**
-- The reason is some times text file is not read with next line character so you may face this issue, better add the labels manually
+
+<details open>
+    <summary>STEP 3</summary>
+    <br>
+    # STEP 3
+    <ul>
+        <li>Before converting to coco we need to create labels.txt and ids.txt</li>
+               
+        
+                python createids.py
+  
+            For labels.txt add your own labels in the file.
+            
+   <li>Note : It is advised to add the labels into the list  in LINE NO. 22 of  ```convertJsontoCOCOformat.py```</li>
+   
+   <li>The reason is some times text file is not read with next line character so you may face this issue, better add the labels manually</li>
+        
+   </ul>
+</details>
+   
 
 #### STEP 4
 
