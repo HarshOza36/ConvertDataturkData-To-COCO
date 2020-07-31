@@ -8,7 +8,7 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
 #### Sorry for that !!
 
 <details open>
-    <summary>Step1</summary>
+    <summary><b>STEP 1</b></summary>
     <br>
     # STEP 1
     <br>
