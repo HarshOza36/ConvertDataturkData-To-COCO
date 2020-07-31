@@ -10,7 +10,7 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
 <details open>
     <summary><b>STEP 1</b></summary>
     <br>
-    # STEP 1
+    <h3><b># STEP 1</b></h3>
     <br>
     <ul><li> First create the folder structure</li></ul>
     Create a folder downloads , pascal_voc and pascal_voc/downloads
@@ -31,7 +31,7 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
 <details open>
     <summary><b>STEP 2</b></summary>
     <br>
-    # STEP 2
+    <h3><b># STEP 2</b></h3>
     <ul>
         <li>Open terminal go to this folder.</li>
                
