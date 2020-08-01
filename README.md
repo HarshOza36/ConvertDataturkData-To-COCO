@@ -67,30 +67,35 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
    </ul>
 </details>
    
+<details open>
+    <summary>STEP 4</summary>
+    <br>
+    # STEP 4
+    <br>
+    <ul><li>Now paste labels.txt and ids.txt into pascal and new filestructure is:</li></ul>
+    
+    
+    File Struture:
+    root
+    ├──downloads
+        ├──Multiple Images
+    ├──pascal
+       ├──downloads
+          ├──Multiple images copied from downloads folder
+       ├──Multiple XMLS
+       ├──ids.txt
+       ├──labels.txt
+    ├──convertData.py
+    ├──convertJsontoCOCOformat.py
+    ├──createids.py
+    ├──dataturk.json
+    ├──removeUselessFilesRejectedbymodel.py
+    ├──train.csv   ------->Will come from xml_to_csv file
+    ├──xml_to_csv.py
+    
+</details>
 
-#### STEP 4
 
-- Now paste labels.txt and ids.txt into pascal and new filestructure is:
-
-```
-File Struture:
-root
-├──downloads
-    ├──Multiple Images
-├──pascal
-   ├──downloads
-      ├──Multiple images copied from downloads folder
-   ├──Multiple XMLS
-   ├──ids.txt
-   ├──labels.txt
-├──convertData.py
-├──convertJsontoCOCOformat.py
-├──createids.py
-├──dataturk.json
-├──removeUselessFilesRejectedbymodel.py
-├──train.csv   ------->Will come from xml_to_csv file
-├──xml_to_csv.py
-```
 
 #### STEP 5
 
