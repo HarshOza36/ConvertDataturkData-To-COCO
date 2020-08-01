@@ -70,7 +70,7 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
 <details open>
     <summary><b>STEP 4</b></summary>
     <br>
-    # STEP 4
+    <b># STEP 4</b>
     <br>
     <ul><li>Now paste labels.txt and ids.txt into pascal and new filestructure is:</li></ul>
     
