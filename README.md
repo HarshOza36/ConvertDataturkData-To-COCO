@@ -68,7 +68,7 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
 </details>
    
 <details open>
-    <summary>STEP 4</summary>
+    <summary><b>STEP 4</b></summary>
     <br>
     # STEP 4
     <br>
@@ -95,22 +95,28 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
     
 </details>
 
+<details open>
+    <summary><b>STEP 5</b></summary>
+    <br>
+    <h3><b># STEP 5</b></h3>
+    <ul>
+    <li>Now run the main coco convert file.</li>
+               
+             python convertJsontoCOCOformat.py  --ann_dir pascal --ann_ids pascal/ids.txt --labels pascal/labels.txt --output  mainout.json
 
-
-#### STEP 5
-
-- Now run the main coco convert file
-
-  ```bash
-      python convertJsontoCOCOformat.py  --ann_dir pascal --ann_ids pascal/ids.txt --labels pascal/labels.txt --output  mainout.json
-  ```
-  
- - Now you will get your COCO format json end
+            
+   <li>Now you will get your COCO format json end.</li>
  
- 
- ## Note: if using with Fastai , run the get_annotations functions and print the images
-    Some images get rejected, so we need to remove that completely.
-    Copy the output of images from get_annotation function and paste it as list l in the file removeUselessFilesRejectedbymodel.py
+        
+   </ul>
+   <b><h2>Note: if using with Fastai , run the get_annotations functions and print the images</h2></b>
+        
+        Some images get rejected, so we need to remove that completely.
+        Copy the output of images from get_annotation function and paste it as list l in the file removeUselessFilesRejectedbymodel.py
+   
+</details>
+
+
 #### Extra Step 6
 
 - So you will run command below if you you dont have fastai locally and will run get_annotations in some different environment like google colab or kaggle kernel
