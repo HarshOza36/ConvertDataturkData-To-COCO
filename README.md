@@ -116,6 +116,26 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
    
 </details>
 
+<details>
+    <summary><b>EXTRA STEP 6</b></summary>
+    <br>
+    <h3><b># STEP 6</b></h3>
+    <ul>
+    <li>So you will run command below if you you dont have fastai locally and will run get_annotations in some different environment like google colab or kaggle kernel</li>
+    <li>Run</li>           
+        
+                python removeUselessFilesRejectedbymodel.py
+  
+            
+   <li>If you have Fastai locally run</li>
+                
+                cd code
+                python getimageslist.py
+   
+   <li>This gives you a folder untagged, remove that folder from pascal directory and save it somewhere else if you want it else delete the whole folder.</li>
+        
+   </ul>
+</details>
 
 #### Extra Step 6
 
