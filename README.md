@@ -138,9 +138,11 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
 </details>
 
 ---
+## Now we need to repeat Step 3 till step 5 again
+---
 
 ## Once useless images are removed you need to run STEP 3 Again since Ids are basically filenames
-## After thats again paste that ids.txt in the pascal folder that is Step 4
+## After that again paste that ids.txt in the pascal folder that is Step 4
 ## Run Step 5 again
 
 
