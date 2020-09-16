@@ -2,6 +2,7 @@
 ##from fastai.vision.data import get_annotations
 from fastai import *
 from fastai.vision import *
+from tqdm import tqdm
 PATH = Path('../')
 print(PATH.ls())
 fnames = get_image_files(PATH/'pascal'/'downloads')
