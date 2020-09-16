@@ -102,7 +102,7 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
     <ul>
     <li>Now run the main coco convert file.</li>
                
-             python convertJsontoCOCOformat.py  --ann_dir pascal --ann_ids pascal/ids.txt --labels pascal/labels.txt --output  mainout.json
+             python convertJsontoCOCOformat.py  --ann_dir pascal --ann_ids pascal/ids.txt --labels pascal/labels.txt --output  mainTrain.json
 
             
    <li>Now you will get your COCO format json end.</li>
