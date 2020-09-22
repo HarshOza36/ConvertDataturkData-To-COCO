@@ -7,6 +7,12 @@ from fastai.vision import *
 from fastai.vision.all import *
 from pathlib import Path
 from tqdm import tqdm
+import os
+
+# Creating uselessDownloads folder if not already in system
+if(not os.path.isdir('pascal/uselessDownloads')):
+    os.mkdir('pascal/uselessDownloads')
+
 
 PATH = Path('../')
 print(PATH.ls())
@@ -19,6 +25,7 @@ images, lbl_bbox = get_annotations(PATH/'mainTrain.json')
 # with open("images.txt","w") as f:
 #     f.write(str(images))
 #     f.close()
+
 l = images
 dirr = os.listdir('pascal/downloads')
 newlist = []
