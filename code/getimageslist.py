@@ -1,3 +1,5 @@
+# Importing Libraries
+
 ##from fastai.vision import Path
 ##from fastai.vision.data import get_annotations
 
@@ -13,12 +15,16 @@ import os
 if(not os.path.isdir('pascal/uselessDownloads')):
     os.mkdir('pascal/uselessDownloads')
 
-
+# Creating Path variable for fastai
 PATH = Path('../')
 print(PATH.ls())
+
+# Image filenames variable
 fnames = get_image_files(PATH/'pascal'/'downloads')
 print(fnames[:3])
 IMG_PATH = fnames
+
+# Main images accepted by fastai get_annotations function 
 images, lbl_bbox = get_annotations(PATH/'mainTrain.json')
 
 # print(images)
