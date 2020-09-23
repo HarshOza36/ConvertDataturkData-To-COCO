@@ -32,6 +32,8 @@ images, lbl_bbox = get_annotations(PATH/'mainTrain.json')
 #     f.write(str(images))
 #     f.close()
 
+
+# Procedure to remove the unwanted images from fastai folder to some random folder called "uselessDownloads"
 l = images
 dirr = os.listdir('pascal/downloads')
 newlist = []
