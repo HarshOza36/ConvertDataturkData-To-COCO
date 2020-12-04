@@ -17,6 +17,8 @@ Code to convert dataturk data to PascalVOOC and then to COCO dataset format
     
     File Struture:
     root
+    ├──code
+        ├──getimageslist.py
     ├──downloads
     ├──pascal
        ├──downloads
